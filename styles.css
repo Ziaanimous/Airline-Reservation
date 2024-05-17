@@ -1,0 +1,346 @@
+/* main */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe9dc; /* Background color */
+}
+
+.home-container02 {
+    max-width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-container02 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.admin-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #6d4c41; /* Blue color */
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* index */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+.modal-content .confirm {
+    background-color: green;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.form-column {
+    flex: 1; 
+    padding: 0 5px; 
+    margin-bottom: 5px;
+    box-sizing: border-box; 
+}
+
+.box {
+    width: 140px;
+    height: auto;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: .3s transform linear, .3s height linear .3s, border-color .3s;
+}
+
+.box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: .3s transform linear, .3s height linear .5s, border-color .3s;
+}
+
+button:hover .box {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+button:hover .box:before {
+    border-color:  #6d4c41;
+    height: 100%;
+    transform: translateX(0);
+}
+
+button:hover .box:after {
+    border-color:  #6d4c41;
+    height: 100%;
+    transform: translateX(0);
+}
+
+button {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+/* reservation */
+
+.logout-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #dc3545; /* Red color */
+    color: #fff;
+    border-radius: 5px;
+}
+table {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #6d4c41;
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th {
+    background-color: #bd978a;
+}
+
+button.noselect {
+    width: 100px; 
+    height: 30px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e62222; 
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    position: relative; 
+    overflow: hidden; 
+}
+
+button.noselect .text {
+    color: white;
+    font-weight: bold;
+    font-size: 12px; 
+    transition: transform 200ms; 
+}
+
+button.noselect .icon {
+    width: 20px; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; 
+    top: 0;
+    right: 0;
+    transition: transform 200ms; 
+}
+
+button.noselect svg {
+    width: 10px; 
+    fill: #eee; 
+}
+
+button.noselect:hover {
+    background: #ff3636; 
+}
+
+button.noselect:hover .text {
+    transform: translateX(-50%);
+    color: transparent;
+}
+
+button.noselect:hover .icon {
+    transform: translateX(-200%) scale(0.8); 
+}
+
+button.noselect:focus {
+    outline: none; 
+}
+
+button.noselect:active .icon svg {
+    transform: scale(0.8); 
+}
+
+/* Button Styles */
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #6d4c41;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.button-container button.cancel-btn {
+    background-color: #dc3545;
+}
+
+/* ADMIN */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container1 {
+    width: 400px;
+    padding: 20px;
+    box-sizing: border-box; 
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); 
+}
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+/* New */
+
+.coolinput label.text {
+    font-size: 0.75rem;
+    color: #000000;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #ffe9dc;
+    width: fit-content;
+}
+
+.coolinput .text {
+    font-size: 0.75rem;
+    color: #000000;
+    font-weight: 700;
+    padding: 0 3px;
+    background: #ffe9dc;
+    width: fit-content;
+    margin-bottom: 5px; 
+    position: relative; 
+    top: 0; 
+}
+
+.coolinput .input,
+.coolinput select {
+    padding: 10px; 
+    font-size: 14px; 
+    border: 2px solid #6d4c41; 
+    border-radius: 5px;
+    background: #ffe9dc; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.coolinput .input:focus,
+.coolinput select:focus {
+    outline: none;
+    border-color: #6d4c41; 
+}
